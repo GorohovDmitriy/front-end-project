@@ -13,7 +13,9 @@ const SelectSort = ({setUserPost}) => {
 		if (event.target.value === 30) {
 			axios
 				.get(
-					`https://course-deploy.herokuapp.com/posts/sortBy/${localStorage.getItem('name')}/title`,
+					`https://course-project-deploy.herokuapp.com/posts/sortBy/${localStorage.getItem(
+						'name',
+					)}/title`,
 				)
 				.then((response) => {
 					setUserPost(response.data)
@@ -21,7 +23,9 @@ const SelectSort = ({setUserPost}) => {
 		} else if (event.target.value === 20) {
 			axios
 				.get(
-					`https://course-deploy.herokuapp.com/posts/sortBy/${localStorage.getItem('name')}/likes`,
+					`https://course-project-deploy.herokuapp.com/posts/sortBy/${localStorage.getItem(
+						'name',
+					)}/likes`,
 				)
 				.then((response) => {
 					setUserPost(response.data)
@@ -29,7 +33,9 @@ const SelectSort = ({setUserPost}) => {
 		} else if (event.target.value === 10) {
 			axios
 				.get(
-					`https://course-deploy.herokuapp.com/posts/sortBy/${localStorage.getItem('name')}/rating`,
+					`https://course-project-deploy.herokuapp.com/posts/sortBy/${localStorage.getItem(
+						'name',
+					)}/rating`,
 				)
 				.then((response) => {
 					setUserPost(response.data)

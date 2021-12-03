@@ -62,15 +62,17 @@ const SearchBar = ({setPostSearch}) => {
 
 	const getSearchPost = () => {
 		if (query !== '') {
-			axios.get(`https://course-deploy.herokuapp.com/posts/search/${query}`).then((resp) => {
-				setPostSearch(resp.data)
-				setQuery('')
-				if (resp.data.length !== 0) {
-					history.push('/feedback')
-				} else {
-					alert('Nothing found')
-				}
-			})
+			axios
+				.get(`https://course-project-deploy.herokuapp.com/posts/search/${query}`)
+				.then((resp) => {
+					setPostSearch(resp.data)
+					setQuery('')
+					if (resp.data.length !== 0) {
+						history.push('/feedback')
+					} else {
+						alert('Nothing found')
+					}
+				})
 		} else {
 			alert('Enter the title of the review')
 		}

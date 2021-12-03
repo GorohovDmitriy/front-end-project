@@ -27,11 +27,14 @@ const SignUp = () => {
 
 	const onSumbit = async ({name, email, password}) => {
 		try {
-			const response = await axios.post('https://course-deploy.herokuapp.com/user/register', {
-				name: name,
-				password: password,
-				email: email,
-			})
+			const response = await axios.post(
+				'https://course-project-deploy.herokuapp.com/user/register',
+				{
+					name: name,
+					password: password,
+					email: email,
+				},
+			)
 			console.log(response)
 			reset()
 			history.push('/login')

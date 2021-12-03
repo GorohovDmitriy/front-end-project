@@ -24,7 +24,7 @@ const Login = ({setLoggedIn}) => {
 
 	const onSumbit = async ({name, email, password}) => {
 		try {
-			const response = await axios.post('https://course-deploy.herokuapp.com/user/login', {
+			const response = await axios.post('https://course-project-deploy.herokuapp.com/user/login', {
 				name: name,
 				password: password,
 				email: email,
@@ -49,7 +49,7 @@ const Login = ({setLoggedIn}) => {
 		signInWithPopup(auth, providerGoogle)
 			.then((result) => {
 				axios
-					.post('https://course-deploy.herokuapp.com/user/login', {
+					.post('https://course-project-deploy.herokuapp.com/user/login', {
 						name: result.user.displayName,
 						password: result.user.uid,
 						email: result.user.email,

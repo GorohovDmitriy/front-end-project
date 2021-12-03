@@ -40,7 +40,7 @@ const CreateReview = ({setPosts}) => {
 
 	useEffect(() => {
 		const getCategory = () => {
-			axios.get('https://course-deploy.herokuapp.com/category/get').then(({data}) => {
+			axios.get('https://course-project-deploy.herokuapp.com/category/get').then(({data}) => {
 				setCategory(data)
 			})
 		}
@@ -62,7 +62,7 @@ const CreateReview = ({setPosts}) => {
 					const fileName = response.data.public_id
 
 					axios
-						.post('https://course-deploy.herokuapp.com/upload', {
+						.post('https://course-project-deploy.herokuapp.com/upload', {
 							title: title,
 							text: text,
 							image: fileName,
@@ -70,7 +70,7 @@ const CreateReview = ({setPosts}) => {
 							category: select,
 						})
 						.then(() => {
-							axios.get('https://course-deploy.herokuapp.com/posts/get').then((resp) => {
+							axios.get('https://course-project-deploy.herokuapp.com/posts/get').then((resp) => {
 								setPosts(resp.data)
 								history.push('/')
 							})
